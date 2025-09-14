@@ -1,0 +1,33 @@
+.logos {
+  padding: 4rem 2rem;
+  background: white;
+  text-align: center;
+}
+
+.logos-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #2d0c57;
+  margin-bottom: 2rem;
+}
+
+.logos-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.logo-img {
+  height: 50px;
+  object-fit: contain;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.logo-img:hover {
+  opacity: 1;
+}

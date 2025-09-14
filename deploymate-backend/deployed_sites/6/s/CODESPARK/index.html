@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SkyPulse - Interactive Weather Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.9.6/lottie.min.js"></script>
+</head>
+<body>
+  <div id="bg" class="bg-layer bg-sunny">
+    <img src="" alt="" id="cloud1" class="cloud" style="width:240px;left:40px;top:120px">
+    <img src="" alt="" id="cloud2" class="cloud" style="width:180px;right:40px;top:60px">
+  </div>
+
+  <div id="app" class="container">
+    <div class="left">
+      <div class="card brand">
+        <h1>SkyPulse</h1>
+        <div class="controls">
+          <button id="themeToggle" class="btn" title="Toggle theme">☾</button>
+          <button id="locateBtn" class="btn" title="Use current location">📍</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="search">
+          <input id="cityInput" placeholder="Search city (e.g., Mumbai)" aria-label="Search city">
+          <button id="searchBtn" class="btn">Search</button>
+          <button id="voiceBtn" class="btn mic" title="Voice search">🎤</button>
+        </div>
+
+        <div style="margin-top:12px" class="chips" id="recentSearches"></div>
+
+        <div style="margin-top:12px" class="footer">Tip: Say 'Search London' or click the mic then speak the city name.</div>
+      </div>
+
+      <div id="currentCard" class="card main-card">
+        <div class="temp-row">
+          <div>
+            <div class="temp" id="temp">--°</div>
+            <div class="desc" id="desc">Welcome — let me fetch your weather</div>
+          </div>
+          <div style="margin-left:auto;text-align:right">
+            <div class="muted" id="location">Unknown</div>
+            <div class="muted" id="timeLocal">--:--</div>
+          </div>
+        </div>
+
+        <div class="row stats" style="width:100%">
+          <div class="stat"><div class="muted">Humidity</div><div id="humidity">--%</div></div>
+          <div class="stat"><div class="muted">Feels like</div><div id="feels">--°</div></div>
+          <div class="stat"><div class="muted">Wind</div><div id="wind">-- km/h</div></div>
+          <div class="stat"><div class="muted">AQI</div><div id="aqi">--</div></div>
+        </div>
+
+      </div>
+
+      <div class="card">
+        <div class="muted">Other Cities</div>
+        <div style="margin-top:12px" class="chips" id="popularCities">
+        </div>
+      </div>
+
+    </div>
+
+ 
+    <div class="right">
+
+      <div class="card chart-card">
+        <div style="display:flex;align-items:center;justify-content:space-between">
+          <div><strong>Hourly Forecast</strong><div class="muted">Next 12 hours</div></div>
+          <div class="muted">Units: °C</div>
+        </div>
+        <canvas id="hourChart" height="120"></canvas>
+      </div>
+
+      <div class="card chart-card">
+        <div style="display:flex;align-items:center;justify-content:space-between">
+          <div><strong>7-Day Forecast</strong><div class="muted">Daily highs & lows</div></div>
+          <div class="muted">Powered by OpenWeatherMap</div>
+        </div>
+        <canvas id="weekChart" height="140"></canvas>
+      </div>
+
+      <div class="card chart-card">
+        <div style="display:flex;align-items:center;justify-content:space-between">
+          <div><strong>About</strong><div class="muted">Use voice or manual search. Deploy to Netlify.</div></div>
+          <div><button id="deployBtn" class="btn">Deploy</button></div>
+        </div>
+        <div style="margin-top:12px" class="muted">Recent: <span id="recentCityLabel">-</span></div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  </body>
+  </html>

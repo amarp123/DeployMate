@@ -1,0 +1,32 @@
+/* Reset / global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  background: #f9fafb;
+  color: #111827;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+/* Smooth scroll + transitions */
+html {
+  scroll-behavior: smooth;
+}
+
+button, a {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.btn {
+  position: relative;
+}
+
+.btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(99, 102, 241, 0.3);
+}

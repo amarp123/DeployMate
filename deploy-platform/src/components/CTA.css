@@ -1,0 +1,157 @@
+/* Two-column layout */
+.cta-container {
+  display: grid;
+  grid-template-columns: 1fr 0.8fr;
+  gap: 2rem;
+  align-items: stretch;
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 2rem;
+}
+
+/* CTA Left */
+.cta-left {
+  background: linear-gradient(135deg, #6366f1, #a855f7, #ec4899);
+  color: white;
+  padding: 4rem 2rem;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.cta-left h2 {
+  font-size: 2.4rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.cta-left p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+}
+
+.btn.primary {
+  background: white;
+  color: #6366f1;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-weight: 700;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn.primary:hover {
+  transform: translateY(-3px);
+ 
+}
+
+/* Profile Card */
+.profile-card {
+  background: white;
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  border: 3px solid transparent;
+  background-clip: padding-box, border-box;
+  background-origin: border-box;
+  background-image: linear-gradient(white, white),
+    linear-gradient(135deg, #6366f1, #a855f7, #ec4899);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+.profile-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Unique glowing badge */
+.profile-card::before {
+  content: "🔥 Creator";
+  position: absolute;
+  top: 12px;
+  right: -30px;
+  transform: rotate(45deg);
+  background: linear-gradient(135deg, #6366f1, #a855f7);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 40px;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+/* Built by text */
+.profile-card .built-by {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #374151;
+  margin-bottom: 0.5rem;
+}
+
+/* Profile Image */
+.profile-img {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 0.5rem; /* reduced bottom space */
+  border: 3px solid #6366f1;
+}
+
+/* Gradient Name */
+.gradient-text {
+  font-size: 1.7rem;
+  font-weight: 800;
+  margin-top: -0.3rem;   /* lifted upward */
+  margin-bottom: 0.3rem;
+  background: linear-gradient(135deg, #6366f1, #a855f7, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Connect Text */
+.profile-card .connect {
+  font-size: 1rem;
+  color: #4b5563;
+  margin-bottom: 1.5rem;
+}
+
+/* Social Links */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  font-size: 1.6rem;
+}
+
+.social-links a {
+  color: #6366f1;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #a855f7;
+  transform: scale(1.1);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .cta-container {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-right {
+    margin-top: 2rem;
+  }
+}
